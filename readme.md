@@ -1,6 +1,6 @@
-#VK SignIn Script
+##VK SignIn Script
 
-## This script can help you to automate your logging into VK
+#### The script helps to automate your logging into VK
 
 ### HOW TO RUN:
 
