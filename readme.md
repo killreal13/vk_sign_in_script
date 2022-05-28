@@ -1,4 +1,4 @@
-##VK SignIn Script
+VK SignIn Script
 
 #### The script helps to automate your logging into VK
 
