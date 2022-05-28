@@ -8,6 +8,10 @@ from selenium.webdriver.common.keys import Keys
 
 
 def create_driver(driver):
+    """
+    :param driver: a name of web-browser
+    :return: a created web-driver
+    """
     match driver:
         case 'safari':
             return webdriver.Safari()
@@ -25,15 +29,22 @@ class VkSignIn:
     password: str
     driver: Any
 
-    # path_to_driver: str
-
     def __init__(self, username, password, driver):
+        """
+        :param username: user email
+        :param password: user password
+        :param driver: a name of web-browser
+        """
         self.username = username
         self.password = password
         self.driver = create_driver(driver)
         # self.path_to_driver = path_to_driver
 
     def signing_in(self, exception_counter: int = 0):
+        """
+        :param exception_counter: a count of retries to reconnect to service
+        :return: logged result of the connection
+        """
         try:
             exception_counter += 1
             self.driver.get('http://www.vk.com')
@@ -55,7 +66,3 @@ class VkSignIn:
             info_logger.info('Signed in successfully!')
         finally:
             self.driver.quit()
-
-
-vk = VkSignIn('kirill.dyuzhij@yandex.ru', '5534097Asd', 'safari')
-vk.signing_in()
